@@ -1,3 +1,43 @@
 img {
     max-width: 600px;
 }
+
+nav {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    height: 60px;
+}
+.logo {
+    display: flex;
+}
+.logo img {
+    height: 60px;
+    width: 70px;
+}
+.logo h3 {
+    margin: auto 0;
+}
+.datepicker {
+    flex-direction: column;
+    justify-content: center;
+    max-height: 30px;
+    margin: auto 0;
+}
+.datepicker p {
+    
+}
+.nav-items {
+    max-height: 30px;
+    margin: auto 0;
+}
+.nav-items ul{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    list-style: none;
+    margin: auto 0;
+}
+li {
+    margin: 0 10px;
+}
