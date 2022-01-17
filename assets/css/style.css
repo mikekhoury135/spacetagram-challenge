@@ -7,6 +7,7 @@ nav {
     flex-direction: row;
     justify-content: space-between;
     height: 60px;
+    border-bottom: 2px solid black;
 }
 .logo {
     display: flex;
@@ -18,23 +19,25 @@ nav {
 .logo h3 {
     margin: auto 0;
 }
+.datepicker-container {
+    margin-top: 30px;
+}
 .datepicker {
     display: flex;
     flex-direction: row;
     justify-content: center;
-    margin-top: 80px;
 }
-
+.datepicker-header {
+    text-align: center;
+}
 .nav-items {
-    max-height: 30px;
-    margin: auto 0;
+    margin: 11px 0 0 0;
 }
 .nav-items ul{
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     list-style: none;
-    margin: auto 0;
 }
 li {
     margin-right: 20px;

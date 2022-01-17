@@ -67,7 +67,7 @@ function api(dateFormat) {
                     iframe.setAttribute('frameborder', '0');
                     iframe.setAttribute('allow', 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture');
                     iframe.setAttribute('allowfullscreen', '');
-                    iframe.setAttribute('SameSite', 'None');
+                    iframe.setAttribute('SameSite', 'Lax');
                 } else {
                     return null;
                 }
