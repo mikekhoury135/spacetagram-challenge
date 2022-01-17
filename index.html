@@ -16,6 +16,7 @@
     <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
     <script src="https://code.jquery.com/ui/1.13.0/jquery-ui.js"></script>
     <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.13.0/themes/base/jquery-ui.css">
 </head>
 <body>
 
@@ -25,17 +26,21 @@
                 <img src="assets/images/NASA_logo.png" alt="NASA Logo">
                 <h3>Spacetagram</h3>
             </div>
-            <div class="datepicker">
-                <p>Date: <input type="text" id="datepicker"></p>
-            </div>
             <div class="nav-items">
                 <ul>
-                    <li>Set Date</li>
-                    <li>Saved Posts</li>
-                    <li>Settings</li>
+                    <li>Liked Posts</li>
                 </ul>
             </div>
         </nav>
+        <div class="datepicker-container">
+            <div class="datepicker-header">
+                <h5>Date Selector</h5>
+                <p>Select a date to view up to 10 photos from that day onward.</p>
+            </div>
+            <div class="datepicker">
+                <p>Date: <input type="text" id="datepicker" autocomplete="off"></p>
+            </div>
+        </div>
     </header>
 
     <main>
