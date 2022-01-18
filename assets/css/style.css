@@ -39,7 +39,7 @@ img {
     max-width: 600px;
 }
 .card {
-    margin-bottom: 30px;
+    margin-bottom: 50px;
 }
 .card-text {
     font-size: 14px;
@@ -137,8 +137,7 @@ img {
 footer {
     display: flex;
     flex-direction: column;
-    margin: 0 auto;
-    max-width: 80%;
+    background-color: lightgray;
 }
 .disclaimer {
     text-align: center;
