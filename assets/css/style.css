@@ -1,3 +1,6 @@
+body {
+    background-color: lightgray;
+}
 img {
     max-width: 600px;
 }
@@ -5,9 +8,8 @@ img {
 nav {
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
+    justify-content: center;
     height: 60px;
-    border-bottom: 2px solid black;
 }
 .logo {
     display: flex;
@@ -29,16 +31,100 @@ nav {
 }
 .datepicker-header {
     text-align: center;
+    margin: 0 20px 0 20px;
 }
-.nav-items {
-    margin: 11px 0 0 0;
+.card {
+    margin-bottom: 30px;
 }
-.nav-items ul{
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    list-style: none;
+.card-text {
+    font-size: 14px;
 }
-li {
-    margin-right: 20px;
+
+
+
+/* Heart Button */
+
+
+
+.heart-like-button {
+    position: absolute;
+    top: 20px;
+    right: -20px;
+    width: 80px;
+    height: 65px;
 }
+.heart-like-button:before {
+    position: absolute;
+    top: 0;
+    left: 20px;
+    transform: rotate(-45deg);
+    transform-origin: 0 100%;
+    width: 20px;
+    height: 31.25px;
+    border-radius: 40px 40px 0 0;
+    background-color: #c2c2c2;
+    content: "";
+    cursor: pointer;
+    transition: .4s;
+}
+.heart-like-button:after {
+    position: absolute;
+    top: 0;
+    left: 0;
+    transform: rotate(45deg);
+    transform-origin :100% 100%;
+    width: 20px;
+    height: 31.25px;
+    border-radius: 40px 40px 0 0;
+    background-color: #c2c2c2;
+    content: "";
+    cursor: pointer;
+    transition: .4s;
+}
+.heart-like-button.liked::before,
+.heart-like-button.liked::after {
+  background-color: #d65076;
+}
+.heart-like-button.liked {
+  animation: liked .4s ease;
+}
+@keyframes liked {
+  0% {
+    transform: scale(.8);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+
+/* Loading State */
+
+.lds-dual-ring {
+    display: inline-block;
+    width: 80px;
+    height: 80px;
+  }
+  .lds-dual-ring:after {
+    content: " ";
+    display: block;
+    width: 64px;
+    height: 64px;
+    margin: 8px;
+    border-radius: 50%;
+    border: 6px solid #000;
+    border-color: #fff transparent #fff transparent;
+    animation: lds-dual-ring 1.2s linear infinite;
+  }
+  @keyframes lds-dual-ring {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+  

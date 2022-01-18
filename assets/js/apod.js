@@ -1,15 +1,12 @@
-
-var dateFormat;
+var dateFormat = "2022-01-01";
 
 $( function() {
 
-    $( "#datepicker" ).datepicker();
+    $( "#datepicker" ).datepicker({ minDate: -365, maxDate: 0});
 
     $("#datepicker").on("change", function(){
 
         var dateInput = $( "#datepicker" ).val().split('/');
-        //dateInput;
-        // console.log(dateInput);
 
         dateFormat = [dateInput[2], dateInput[0], dateInput[1]];
 
@@ -34,10 +31,7 @@ function api(dateFormat) {
 
     console.log(url)
 
-    // function grabData(data){
-
-    // }
-
+    
     //api fetch and json parse
     fetch (url, {
         method: 'GET',
@@ -45,7 +39,8 @@ function api(dateFormat) {
     .then(response => {
         response.json().then(function(data) {
             
-            for (let i = 0; i < 10; i++) {
+            
+            for (let i = 0; i < 366; i++) {
                 
                 // parent div
                 let div = document.createElement("div");
@@ -67,11 +62,11 @@ function api(dateFormat) {
                     iframe.setAttribute('frameborder', '0');
                     iframe.setAttribute('allow', 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture');
                     iframe.setAttribute('allowfullscreen', '');
-                    iframe.setAttribute('SameSite', 'Lax');
+                    iframe.setAttribute('SameSite', 'Strict');
                 } else {
                     return null;
                 }
-
+                
                 // div for info under image
                 let template = document.createElement('div');
                 
@@ -79,9 +74,19 @@ function api(dateFormat) {
                 let title = document.createElement("h5");
                 title.innerHTML = data[i].title;
                 title.setAttribute("class", "card-title");
-
+                
                 // Like button
-                let likeButton = document.createElement("button")
+                let likeButton = document.createElement("div")
+                likeButton.setAttribute("class", "heart-like-button")
+                div.appendChild(likeButton)
+
+                likeButton.addEventListener("click", () => {
+                if (likeButton.classList.contains("liked")) {
+                    likeButton.classList.remove("liked");
+                } else {
+                    likeButton.classList.add("liked");
+                }
+                });
                 
                 // date for card
                 let date = document.createElement("h6");
@@ -102,11 +107,13 @@ function api(dateFormat) {
                 template.appendChild(details);
                 template.setAttribute("class", "card-body");
 
+                
+                
                 div.appendChild(template);
                 div.setAttribute("class", "card col-8 offset-2 mt-3");
                 
                 mainEl.appendChild(div);
-
+                
                 console.log(data[i]);
             };
         });
