@@ -1,10 +1,10 @@
+/* General */
+
 body {
     background-color: lightgray;
 }
-img {
-    max-width: 600px;
-}
 
+/* Header, Description and Datepicker */
 nav {
     display: flex;
     flex-direction: row;
@@ -33,6 +33,11 @@ nav {
     text-align: center;
     margin: 0 20px 0 20px;
 }
+
+/* Card */
+img {
+    max-width: 600px;
+}
 .card {
     margin-bottom: 30px;
 }
@@ -40,11 +45,7 @@ nav {
     font-size: 14px;
 }
 
-
-
 /* Heart Button */
-
-
 
 .heart-like-button {
     position: absolute;
@@ -100,15 +101,18 @@ nav {
   }
 }
 
-
 /* Loading State */
 
+#loading-state-wrapper {
+    display: none;
+    flex-direction: row;
+    justify-content: center;
+}
 .lds-dual-ring {
-    display: inline-block;
     width: 80px;
     height: 80px;
-  }
-  .lds-dual-ring:after {
+}
+.lds-dual-ring:after {
     content: " ";
     display: block;
     width: 64px;
@@ -118,13 +122,26 @@ nav {
     border: 6px solid #000;
     border-color: #fff transparent #fff transparent;
     animation: lds-dual-ring 1.2s linear infinite;
-  }
-  @keyframes lds-dual-ring {
+}
+@keyframes lds-dual-ring {
     0% {
       transform: rotate(0deg);
     }
     100% {
       transform: rotate(360deg);
     }
-  }
-  
+}
+
+/* Footer */
+
+footer {
+    display: flex;
+    flex-direction: column;
+    margin: 0 auto;
+    max-width: 80%;
+}
+.disclaimer {
+    text-align: center;
+    font-size: 16px;
+    margin: 0 !important;
+}

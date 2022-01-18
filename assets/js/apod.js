@@ -1,36 +1,39 @@
+// Global Declaration for dateFormat
 var dateFormat = "2022-01-01";
 
+// Datepicker jQuery UI function and dateFormat conversion
 $( function() {
 
     $( "#datepicker" ).datepicker({ minDate: -365, maxDate: 0});
 
+    // Triggered on input field change
     $("#datepicker").on("change", function(){
 
+        // Splitting the date as formatted by the datepicker
         var dateInput = $( "#datepicker" ).val().split('/');
 
+        // Reordering the output of the datepicker
         dateFormat = [dateInput[2], dateInput[0], dateInput[1]];
 
+        // Joining them in new format for APOD's query parameter
         dateFormat = dateFormat.join("-");
-        
-        console.log(dateFormat);
+
         api(dateFormat);
         return dateFormat;
     });
 });
 
+// API data fetch function
 function api(dateFormat) {
     
-    
+    // displaying loading state at the beginning of function
+    document.getElementById("loading-state-wrapper").style.display = "flex";
+
     // main element declaration
     const mainEl = document.querySelector('main');
 
-    mainEl.innerHTML = '';
-
-    //api-key
+    //api url with with query parameter for api-key and start date
     var url = 'https://api.nasa.gov/planetary/apod?api_key=mDDTHtQpHkPKUJL8FtI4cOsiGm3Hr4paNKBbR59A&start_date=' + dateFormat;
-
-    console.log(url)
-
     
     //api fetch and json parse
     fetch (url, {
@@ -38,18 +41,18 @@ function api(dateFormat) {
     })
     .then(response => {
         response.json().then(function(data) {
-            
-            
+
+            // for loop to populate the cards with api data
             for (let i = 0; i < 366; i++) {
                 
-                // parent div
+                // parent div for the card
                 let div = document.createElement("div");
 
                 // card image or video
                 let img = document.createElement("img");
                 let iframe = document.createElement("iframe");
                 
-                //conditionl to determine if iframe or img tag is used
+                //conditional to determine if iframe or img tag is used
                 if (data[i].media_type === 'image') {
                     img.setAttribute('src', data[i].hdurl);
                     img.setAttribute("class", "card-img-top img-fluid");
@@ -80,6 +83,7 @@ function api(dateFormat) {
                 likeButton.setAttribute("class", "heart-like-button")
                 div.appendChild(likeButton)
 
+                // Event listener to toggle like button
                 likeButton.addEventListener("click", () => {
                 if (likeButton.classList.contains("liked")) {
                     likeButton.classList.remove("liked");
@@ -107,16 +111,17 @@ function api(dateFormat) {
                 template.appendChild(details);
                 template.setAttribute("class", "card-body");
 
-                
-                
+                // adding card data and classes to parent div
                 div.appendChild(template);
                 div.setAttribute("class", "card col-8 offset-2 mt-3");
                 
+                //adding parent div to mainEl in index file
                 mainEl.appendChild(div);
-                
-                console.log(data[i]);
             };
+            
         });
-        
+
+        // removing loading state at the end of the function
+        document.getElementById("loading-state-wrapper").style.display = "none";
     });
 };

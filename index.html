@@ -20,13 +20,18 @@
 </head>
 <body>
 
+    <!-- All header content -->
     <header>
+
+        <!-- Logo and page title -->
         <nav>
             <div class="logo">
                 <img src="assets/images/NASA_logo.png" alt="NASA Logo">
                 <h3>Spacetagram</h3>
             </div>
         </nav>
+
+        <!-- Datepicker and description -->
         <div class="datepicker-container">
             <div class="datepicker-header">
                 <h5>Date Selector</h5>
@@ -36,14 +41,26 @@
                 <p>Date: <input type="text" id="datepicker" autocomplete="off"></p>
             </div>
         </div>
+
     </header>
 
+    <!-- Main element where cards are displayed -->
     <main>
-
+        <div id="loading-state-wrapper">
+            <div class="lds-dual-ring"></div>
+        </div>
     </main>
 
-    <script src="assets/js/index.js"></script>
+    <!-- Footer -->
+    <footer>
+        <p class="disclaimer">DISCLAIMER: All images showcased through this website are from NASA's APOD API which you can view <a href="https://github.com/nasa/apod-api">here:</a></p>
+        <p class="disclaimer">This project was built by Michael Khoury and can be located at <a href="https://github.com/mikekhoury135/shopify-fed-intern-challenge">this repository.</a></p>
+    </footer>
+
+    <!-- Astronomy picture of the day api configuration -->
     <script src="assets/js/apod.js"></script>
+
+    <!-- jQuery UI CDN -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js" integrity="sha512-uto9mlQzrs59VwILcLiRYeLKPPbS/bT71da/OEBYEwcdNUk8jYIy+D176RYoop1Da+f9mvkYrmj5MCLZWEtQuA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 </body>
 </html>
