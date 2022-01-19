@@ -27,6 +27,7 @@ $( function() {
 function api(dateFormat) {
     
     // displaying loading state at the beginning of function
+    document.getElementById("loading-state-wrapper").style.display = "flex";
     document.getElementById("loading-state-wrapper").style.visibility = "visible";
 
     // main element declaration
