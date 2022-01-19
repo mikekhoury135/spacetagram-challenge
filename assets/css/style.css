@@ -1,0 +1,192 @@
+/* General */
+
+body {
+    background-color: lightgray;
+}
+
+/* Header, Description and Datepicker */
+nav {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    height: 60px;
+}
+.logo {
+    display: flex;
+}
+.logo img {
+    height: 60px;
+    width: 70px;
+}
+.logo h3 {
+    margin: auto 0;
+}
+.datepicker-container {
+    margin-top: 30px;
+}
+.datepicker {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+.datepicker-header {
+    text-align: center;
+    margin: 0 20px 0 20px;
+}
+
+/* Card */
+img {
+    max-width: 600px;
+}
+.card {
+    margin-bottom: 50px;
+}
+.card-text {
+    font-size: 14px;
+}
+
+/* Heart Button */
+
+.heart-like-button {
+    position: absolute;
+    top: 20px;
+    right: -20px;
+    width: 80px;
+    height: 65px;
+}
+.heart-like-button:before {
+    position: absolute;
+    top: 0;
+    left: 20px;
+    transform: rotate(-45deg);
+    transform-origin: 0 100%;
+    width: 20px;
+    height: 31.25px;
+    border-radius: 40px 40px 0 0;
+    background-color: #c2c2c2;
+    content: "";
+    cursor: pointer;
+    transition: .4s;
+}
+.heart-like-button:after {
+    position: absolute;
+    top: 0;
+    left: 0;
+    transform: rotate(45deg);
+    transform-origin :100% 100%;
+    width: 20px;
+    height: 31.25px;
+    border-radius: 40px 40px 0 0;
+    background-color: #c2c2c2;
+    content: "";
+    cursor: pointer;
+    transition: .4s;
+}
+.heart-like-button.liked::before,
+.heart-like-button.liked::after {
+  background-color: #d65076;
+}
+.heart-like-button.liked {
+  animation: liked .4s ease;
+}
+@keyframes liked {
+  0% {
+    transform: scale(.8);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+/* Loading State */
+
+
+#loading-state-wrapper {
+    display: flex;
+    visibility: hidden;
+    flex-direction: row;
+    justify-content: center;
+    height: 50vh;
+}
+.lds-dual-ring {
+    width: 80px;
+    height: 80px;
+    margin: auto 0;
+}
+.lds-dual-ring:after {
+    content: " ";
+    display: block;
+    width: 64px;
+    height: 64px;
+    margin: 8px;
+    border-radius: 50%;
+    border: 6px solid #000;
+    border-color: #fff transparent #fff transparent;
+    animation: lds-dual-ring 1.2s linear infinite;
+}
+@keyframes lds-dual-ring {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+/* Media Queries for loading state space taken */
+@media only screen and (min-height: 600px) {
+    #loading-state-wrapper {
+        height: 33vh;
+    }
+}
+@media only screen and (min-height: 700px) {
+    #loading-state-wrapper {
+        height: 37vh;
+    }
+}
+@media only screen and (min-height: 800px) {
+    #loading-state-wrapper {
+        height: 50vh;
+    }
+}
+@media only screen and (min-height: 900px) {
+    #loading-state-wrapper {
+        height: 60vh;
+    }
+}
+@media only screen and (min-height: 1000px) {
+    #loading-state-wrapper {
+        height: 65vh;
+    }
+}
+@media only screen and (min-height: 1150px) {
+    #loading-state-wrapper {
+        height: 70vh;
+    }
+}
+@media only screen and (min-height: 1350px) {
+    #loading-state-wrapper {
+        height: 80vh;
+    }
+}
+@media only screen and (min-height: 2000px) {
+    #loading-state-wrapper {
+        height: 85vh;
+    }
+}
+
+/* Footer */
+
+footer {
+    display: flex;
+    flex-direction: column;
+    background-color: lightgray;
+}
+.disclaimer {
+    text-align: center;
+    font-size: 16px;
+    margin: 0 !important;
+}
