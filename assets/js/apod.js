@@ -25,7 +25,10 @@ $( function() {
 
 // API data fetch function
 function api(dateFormat) {
-    
+
+    // clearing all cards at the beginning of the function so date picker can be used multiple times
+    $('.card').remove();
+
     // displaying loading state at the beginning of function
     document.getElementById("loading-state-wrapper").style.display = "flex";
     document.getElementById("loading-state-wrapper").style.visibility = "visible";
