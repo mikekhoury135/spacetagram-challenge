@@ -103,14 +103,18 @@ img {
 
 /* Loading State */
 
+
 #loading-state-wrapper {
-    display: none;
+    display: flex;
+    visibility: hidden;
     flex-direction: row;
     justify-content: center;
+    height: 50vh;
 }
 .lds-dual-ring {
     width: 80px;
     height: 80px;
+    margin: auto 0;
 }
 .lds-dual-ring:after {
     content: " ";
@@ -125,10 +129,52 @@ img {
 }
 @keyframes lds-dual-ring {
     0% {
-      transform: rotate(0deg);
+        transform: rotate(0deg);
     }
     100% {
-      transform: rotate(360deg);
+        transform: rotate(360deg);
+    }
+}
+
+/* Media Queries for loading state space taken */
+@media only screen and (min-height: 600px) {
+    #loading-state-wrapper {
+        height: 33vh;
+    }
+}
+@media only screen and (min-height: 700px) {
+    #loading-state-wrapper {
+        height: 37vh;
+    }
+}
+@media only screen and (min-height: 800px) {
+    #loading-state-wrapper {
+        height: 50vh;
+    }
+}
+@media only screen and (min-height: 900px) {
+    #loading-state-wrapper {
+        height: 60vh;
+    }
+}
+@media only screen and (min-height: 1000px) {
+    #loading-state-wrapper {
+        height: 65vh;
+    }
+}
+@media only screen and (min-height: 1150px) {
+    #loading-state-wrapper {
+        height: 70vh;
+    }
+}
+@media only screen and (min-height: 1350px) {
+    #loading-state-wrapper {
+        height: 80vh;
+    }
+}
+@media only screen and (min-height: 2000px) {
+    #loading-state-wrapper {
+        height: 85vh;
     }
 }
 
